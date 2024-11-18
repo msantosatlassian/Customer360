@@ -9,7 +9,6 @@ jobs:
   build-environment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       
       - name: Run a one-line script
         run: echo starting build
@@ -22,7 +21,6 @@ jobs:
       url: "https://dev.example.com"
     needs: build-environment
     steps:
-      - uses: actions/checkout@v3
     
       - name: Deploy to Development
         run: echo Deploying to Development
