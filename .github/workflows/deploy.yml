@@ -1,61 +1,37 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Push to master
+name: Deployment
 
 on:
   push:
     branches:
       - main
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-environment:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
+      - uses: actions/checkout@v3
+      
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo starting build
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project
-          
-  deploy-to-dev:
+  deploy-dev:
     runs-on: ubuntu-latest
-    name: Deploy to Development
-    needs: [build]
-    environment: "Development"
+    environment:
+      name: Development
+      url: "https://dev.example.com"
+    needs: build-environment
     steps:
-      - uses: actions/checkout@v4
-      - name: Running staging deployment
-        run: |
-          echo Deploying to Development...
-          
-  deploy-to-staging:
-    runs-on: ubuntu-18.04
-    name: Deploy to Staging
-    environment: "Staging"
-    needs: [build]
-    steps:
-      - name: Running staging deployment
-        run: |
-          echo Deploying to staging...
-          
-  deploy-to-prod:
+      - uses: actions/checkout@v3
+    
+      - name: Deploy to Development
+        run: echo Deploying to Development
+
+  deploy-prd:
     runs-on: ubuntu-latest
-    name: Deploy to Production
-    environment: "Production"
-    needs: [build]
-    steps: 
-      - name: Running production deployment
-        run: |
-          echo Deploying to production...
+    environment:
+      name: Production
+      url: "https://prod.example.com"
+    needs: deploy-dev
+    steps:
+      - name: Deploy to Production
+        run: echo Deploying to Production
