@@ -13,7 +13,7 @@ jobs:
         run: echo starting build
 
   deploy-dev:
-    #runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment:
       name: Development
       url: "https://dev.example.com"
@@ -23,7 +23,7 @@ jobs:
         run: echo Deploying to Development
 
   deploy-prd:
-    #runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment:
       name: Production
       url: "https://prod.example.com"
