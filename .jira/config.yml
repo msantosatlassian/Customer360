@@ -1,9 +1,11 @@
 deployments:
-    deploymentGating:
-    enabled: true
-    retry: 200
-    sleep: 15
-    environments:
+  deploymentGating:
+    enabled: true 
+    retry: 200  
+    sleep: 10 
+    environments: 
+    - Development
+    - Testing
     - Production
   services:
     ids:
