@@ -1,0 +1,25 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "customer_db",
+    "user": "db_user",
+    "password": "securepassword"
+  },
+  "authentication": {
+    "jwtSecret": "your_jwt_secret_key",
+    "tokenExpiration": "1h"
+  },
+  "logging": {
+    "level": "info",
+    "file": "logs/app.log"
+  },
+  "features": {
+    "enableEmailNotifications": true,
+    "enableTwoFactorAuth": false
+  },
+  "api": {
+    "baseUrl": "https://api.yourapp.com",
+    "timeout": 5000
+  }
+}
