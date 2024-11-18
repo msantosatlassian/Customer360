@@ -1,4 +1,8 @@
 {
+##Add stuff between these lines:
+#
+#
+##Stop
   "database": {
     "host": "localhost",
     "port": 5432,
@@ -23,4 +27,3 @@
     "timeout": 5000
   }
 }
-#adding more
