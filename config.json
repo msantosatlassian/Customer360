@@ -1,8 +1,8 @@
 {
 ##Add stuff between these lines:
 # Only add stuff here 
-# My modifications!!
-# TEST
+# 
+#
 ##Stop
   "database": {
     "host": "localhost",
