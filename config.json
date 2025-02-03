@@ -1,14 +1,14 @@
 {
 ##Add stuff between these lines:
 # Only add stuff here 
-# Removed this
+# add in some new stuff
 #
 ##Stop
   "database": {
     "host": "localhost",
     "port": 5432,
     "name": "customer_db",
-    "user": "db_user",
+    "user": "db_user1",
     "password": "securepassword"
   },
   "authentication": {
