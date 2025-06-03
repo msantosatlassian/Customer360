@@ -1,8 +1,9 @@
 {
-##Add stuff between these lines:
-# This is mmy new code
-#
-##Stop
+//##Add stuff between these lines:
+//# This is mmy new code
+//  # even more stuff
+//#
+//##Stop
   "database": {
     "host": "localhost",
     "port": 5432,
